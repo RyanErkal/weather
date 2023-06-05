@@ -1,4 +1,5 @@
 var data;
+var city;
 
 async function main() {
 	const response = await fetch(
@@ -14,8 +15,30 @@ async function main() {
 	//console.log(data.current.wind_mph);
 }
 
+async function newLocation(city) {
+	const response = await fetch(
+		`http://api.weatherapi.com/v1/current.json?key=68ea4bfe614d42859ca22853230506&q=${city}&aqi=yes`
+	);
+	data = await response.json();
+	console.log(data);
+	//myJSON = JSON.parse(data);
+	//console.log(myJSON);
+	clear();
+	createLocation(data);
+	createWeather(data);
+	createAirQuality(data);
+	//console.log(data.current.wind_mph);
+}
+
 document.addEventListener("DOMContentLoaded", main);
+
+let input = document.querySelector("input");
+input.addEventListener("input", newLocation(input.value));
 let body = document.querySelector(".main");
+
+function clear() {
+	body.innerHTML = "";
+}
 
 createLocation = (data) => {
 	locationdiv = document.createElement("div");

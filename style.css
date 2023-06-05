@@ -5,14 +5,16 @@ body {
 header {
 	background-color: #1e1e1e;
 	color: #fff;
+	display: block;
 	text-align: center;
 	padding: 1rem;
 	margin-bottom: 1rem;
 }
 
 main {
-	display: flex;
+	display: block;
 	justify-content: center;
+	text-align: center;
 }
 
 footer {
