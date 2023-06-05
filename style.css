@@ -28,6 +28,8 @@ footer {
 
 .location {
 	text-align: center;
+	font-size: 1.5rem;
+	margin: 1rem;
 }
 
 .weather {
@@ -35,8 +37,10 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	margin: 1rem;
 }
 
 .airquality {
 	text-align: center;
+	margin: 1rem;
 }
